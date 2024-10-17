@@ -1,0 +1,198 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background: #f5f5f5;
+}
+
+.scroll-section {
+    height: 300vh; /* 页面足够高，便于实现滚动效果 */
+    position: relative;
+}
+
+.scroll-text {
+    position: fixed; /* 固定在视口中间 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(100%); /* 初始状态，从页面下方出现 */
+    transform-origin: center;
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out, backdrop-filter 1s ease-out;
+    font-size: 3rem;
+    white-space: nowrap;
+    backdrop-filter: blur(15px); /* 初始毛玻璃效果 */
+}
+
+.scroll-text.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0); /* 从下滑动到中心 */
+    backdrop-filter: blur(0); /* 毛玻璃逐渐消失 */
+}
+
+.scroll-text.inactive {
+    transform: translate(-50%, -50%) translateY(-100%); /* 向上滑出视口 */
+    opacity: 0; /* 透明度逐渐变为 0 */
+    backdrop-filter: blur(15px); /* 恢复毛玻璃效果 */
+}
+
+/* 隐藏按钮的初始状态 */
+.hidden-button {
+    opacity: 0;
+    position: fixed;
+    left: 50%;
+    bottom: 30%;
+    transform: translateX(-50%);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    transition: opacity 1s ease-out;
+    z-index: 2000; /* 确保按钮位于其他元素之上 */
+}
+
+/* 激活按钮显现 */
+.hidden-button.active {
+    opacity: 1;
+}
+
+/* 对话框样式 */
+.chat-container {
+    position: fixed;
+    top: 50%; /* 初始位置在垂直中心 */
+    left: 50%;
+    transform: translate(-50%, -50%); /* 水平和垂直居中 */
+    width: 90%;
+    max-width: 600px;
+    height: auto; /* 高度自适应内容 */
+    max-height: calc(100vh - 40px); /* 最大高度为视口高度减去上下边距 */
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 1s ease-out, top 0.5s ease-out, transform 0.5s ease-out;
+    z-index: 1500;
+    background: transparent;
+}
+
+.chat-container.active {
+    opacity: 1;
+}
+
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* 占满整个容器高度 */
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    width: 100%;
+}
+
+.chat-input-container {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chat-input {
+    border: none;
+    flex: 1;
+    outline: none;
+    font-size: 1rem;
+}
+
+.chat-send-button {
+    background: #d3d3d3; /* 使用灰色背景 */
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.chat-send-button:hover {
+    background: #b0b0b0; /* 鼠标悬停时改变颜色 */
+}
+
+.chat-send-button svg {
+    width: 25px;
+    height: 25px;
+    color: #ffffff; /* 设置箭头颜色为白色 */
+}
+
+/* 当输入框有内容时，发送按钮的激活状态 */
+.chat-send-button.active {
+    background: #000000; /* 黑色背景 */
+}
+
+.chat-send-button.active svg {
+    color: #ffffff; /* 保持箭头为白色 */
+}
+
+.chat-container.bottom {
+    top: auto; /* 取消顶部定位 */
+    bottom: 20px; /* 距离底部的距离 */
+    transform: translateX(-50%); /* 只保留水平居中 */
+    height: calc(100vh - 40px); /* 设置固定高度 */
+}
+
+.chat-hint {
+    font-size: 0.9rem;
+    color: #888888;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: normal;
+    transition: opacity 0.5s ease-out;
+}
+
+.chat-container.bottom .chat-hint {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    clear: both;
+}
+
+.message.user {
+    background: #d1e7dd;
+    align-self: flex-end;
+    text-align: right;
+    float: right;
+}
+
+.message.bot {
+    background: #f0f0f0;
+    align-self: flex-start;
+    text-align: left;
+    float: left;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    align-self: flex-start;
+    text-align: left;
+    float: left;
+}
