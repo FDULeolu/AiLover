@@ -120,7 +120,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // 调用大语言模型 API
     async function fetchModelResponse(message) {
 
-        const apiUrl = "https://8.154.26.181:443/https://dashscope.aliyuncs.com/api/v1/apps/9b5b1d8a879c4f7881ac34ec38cc0071/completion";
+        // const apiUrl = "https://8.154.26.181:443/https://dashscope.aliyuncs.com/api/v1/apps/9b5b1d8a879c4f7881ac34ec38cc0071/completion";
+        const apiUrl = "http://8.154.26.181:8080/https://dashscope.aliyuncs.com/api/v1/apps/9b5b1d8a879c4f7881ac34ec38cc0071/completion";
         const apiKey = "sk-92aa5db60a1f4c94a6349abe6419669f";
     
         // 构建请求数据
