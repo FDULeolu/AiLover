@@ -201,13 +201,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 "2017年，谷歌团队在《Attention is all you need》中使用了一种不同于之前广泛使用的循环神经网络（RNN）的全新的方式来解决序列到序列的问题，在传统RNN中，模型需要逐步处理输入序列的每个元素，导致无法并行计算，训练效率较低，且难以处理较长的依赖关系。而Transformer通过自注意力机制，能够在一次运算中捕捉序列中任意两个元素之间的关系，无论它们之间的距离多远。这使得模型不仅可以并行处理整个序列，而且能够有效地捕捉长距离依赖。下图展示了Transformer整体架构。",
                 {
                     type: 'image',
-                    src: 'https://github.com/FDULeolu/AiLover/blob/main/assets/transformer_arch.jpg',
+                    src: 'https://raw.githubusercontent.com/FDULeolu/AiLover/main/assets/transformer_arch.jpg',
                     alt: 'Transformer模型示意图'
                 },
                 "从Transformer的架构图中可以看到，其仍然保留了Encoder-Decoder结构，其中左侧是Transformer的Encoder，右侧是Decoder，只是其核心部分变成了Attention块（呼应Attention is all you need的论文题目）。如下图所示，Attention块通过计算Q，K矩阵的乘积，经过缩放后输入SoftMax函数来获得注意力分数，最后与V矩阵相乘来获得根据输入信息注意力分布的加权平均。",
                 {
                     type: 'image',
-                    src: './assets/scaled_dot_product_attention.png',
+                    src: 'assets/scaled_dot_product_attention.png',
                     alt: 'SDPA'
                 },
                 "然而，语言序列中的字符顺序不影响计算结果，也就是说，“你爱我”与“我爱你”这两句话计算的结果是一样的，因此在进入Attention块之前，输入矩阵先加上了一个位置编码，用来表示字符在序列中的位置信息，让模型理解不同语序的序列所代表的不同含义。",
