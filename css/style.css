@@ -54,6 +54,10 @@ body {
     opacity: 1;
 }
 
+.hidden-button:hover {
+    background-color: linear-gradient(135deg, #f5f5f5, #eaeaea);
+}
+
 /* 对话框样式 */
 .chat-container {
     position: fixed;
@@ -197,23 +201,6 @@ body {
     float: left;
 }
 
-/* NEXT 按钮的初始样式，定位到页面的右下角，与对话框齐平 */
-.next-button {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.next-button:hover {
-    background-color: #0056b3;
-}
 
 .new-content {
     font-family: Arial, sans-serif;
@@ -275,7 +262,7 @@ body {
     bottom: 50px;
     right: 20px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #c1c1c3;
     color: white;
     border: none;
     border-radius: 5px;
@@ -284,7 +271,7 @@ body {
 }
 
 .next-button:hover {
-    background-color: #0056b3;
+    background-color: #373838;
 }
 
 .section-image {
@@ -307,4 +294,14 @@ body {
     align-items: center;
     font-size: 1.2rem;
     color: #666;
+}
+
+ul {
+    padding-left: 20px; /* 添加左侧内边距 */
+    margin-bottom: 1.5rem; /* 段落之间的间距 */
+}
+
+li {
+    margin-bottom: 0.5rem; /* 列表项之间的间距 */
+    font-size: 1.2rem; /* 列表项的字体大小 */
 }
