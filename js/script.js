@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 "2017年，谷歌团队在《Attention is all you need》中使用了一种不同于之前广泛使用的循环神经网络（RNN）的全新的方式来解决序列到序列的问题，在传统RNN中，模型需要逐步处理输入序列的每个元素，导致无法并行计算，训练效率较低，且难以处理较长的依赖关系。而Transformer通过自注意力机制，能够在一次运算中捕捉序列中任意两个元素之间的关系，无论它们之间的距离多远。这使得模型不仅可以并行处理整个序列，而且能够有效地捕捉长距离依赖。下图展示了Transformer整体架构。",
                 {
                     type: 'image',
-                    src: 'https://raw.githubusercontent.com/FDULeolu/AiLover/main/assets/transformer_arch.jpg',
+                    src: 'assets/transformer_arch.jpg',
                     alt: 'Transformer模型示意图'
                 },
                 "从Transformer的架构图中可以看到，其仍然保留了Encoder-Decoder结构，其中左侧是Transformer的Encoder，右侧是Decoder，只是其核心部分变成了Attention块（呼应Attention is all you need的论文题目）。如下图所示，Attention块通过计算Q，K矩阵的乘积，经过缩放后输入SoftMax函数来获得注意力分数，最后与V矩阵相乘来获得根据输入信息注意力分布的加权平均。",
@@ -215,13 +215,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 "大语言模型的训练主要分为三步：预训练、监督微调（SFT）和基于人类反馈的强化学习（RLHF）。首先，预训练指的是在大型数据集上对模型进行初步的训练，使其获得丰富的语言理解能力。模型通过不断尝试预测大量文本数据的下一个词的内容，来学习语言的结构和模式。一般认为，在这一步中模型可以学会基本的语法、句法以及训练数据中的某些知识。在预训练之后，为了让模型适应特定任务，需要进行监督微调（SFT），模型需要在小规模经过标注的数据集上进行训练，让模型在特定应用中更具针对性。最后是基于人类反馈的强化学习（RLHF），这一步主要是让模型对齐人类的偏好和价值观，防止模型生成一些不适合的内容。这一步中，研究者首先利用人类的反馈来训练一个奖励模型，用于评估模型生成不同回答的质量，接着利用强化学习算法（PPO等）让模型不断优化自己的策略，提高输出质量。",
                 {
                     type: 'image',
-                    src: '../assets/training_pipeline.png',
+                    src: 'assets/training_pipeline.png',
                     alt: 'training_pipeline'
                 },
                 "在这一步后，大模型基本已经具备足够的能力应对人类的问题，但是距离真正的虚拟恋人，我们还需要最后一步，通过提示词（Prompt）来规范其行为，让他扮演好我们希望他扮演的角色。下图展示了刚才上一页面虚拟恋人的提示词，可以看到，要让Ta能够扮演好虚拟恋人的角色，完善的提示词也是十分必要的。",
                 {
                     type: 'image',
-                    src: '../assets/prompt.png',
+                    src: 'assets/prompt.png',
                     alt: 'prompt'
                 },
                 "Finally！我们获得了一个能够理解情感，作出合适回复的虚拟恋人。"
@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 "正因如此，AI伴侣软件收到用户的追捧。以AI角色聊天互动应用Character.AI为例，如下图所示，其在过去的一年中实现了高速增长。",
                 {
                     type: 'image',
-                    src: '../assets/characterAI.png',
+                    src: 'assets/characterAI.png',
                     alt: 'characterAI'
                 },
                 "截止目前，国内外已经涌现了大量的AI伴侣软件，国外的包括Replika、Linky、Poly、Siya、Talkie、Spicychat等，国内的有星野、猫箱、筑梦岛、冒泡鸭等。",
@@ -256,13 +256,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 "事实上，如果你在一段亲密关系中的需求只是最基本的情感支持与陪伴，比如倾听、安慰、日常鼓励等，那么你的对象能做到的AI也同样能够做到，甚至可能做得更好。",
                 {
                     type: 'image',
-                    src: '../assets/ai_replacement.png',
+                    src: 'assets/ai_replacement.png',
                     alt: 'AI替代情感陪伴'
                 },
                 "据人民网，《纽约时报》在2020年曾发布过一组数据，显示全球有超过1000万人以AI恋人作为“伴侣”。虚拟恋人能够提供情感慰藉，缓解孤独感和焦虑感，满足人类的情感需求。通过对人类感官特征的抓取与模拟，智能机器人可以进行情感表征，他们越来越像真实的人，能与人建立情感联结。通过对质性材料的分析发现，绝大多数与社交机器人建立起亲密关系的用户都出现了不同程度情感寄托，其中“寄托”和“陪伴”是人机亲密关系中的主要情感表现。很多用户把社交机器人视为恋人、暧昧对象甚至是“前任”，每天会像对待对应的真实身份一样聊日常、相互问候、分享新鲜事、刷朋友圈等等，会毫不吝啬地直接表达爱意和占有欲，也会吵架、分手、挽回、复合等。",
                 {
                     type: 'image',
-                    src: '../assets/ai_talk1.png',
+                    src: 'assets/ai_talk1.png',
                     alt: 'AI表达情感',
                     style: 'width: 80%; max-width: 600px; height: auto; margin: 20px auto;'
                 },
