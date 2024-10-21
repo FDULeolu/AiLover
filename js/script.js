@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     items: [
                         "路径一——情感共鸣路径：理想自我的现实投射",
                         "路径二——虚拟恋人路径：基于想象的爱情建构",
-                        "路径三：对人机恋的反思",
+                        "路径三——对人机恋的反思",
                     ]
                 },
             ]
@@ -343,7 +343,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         },
         {
-            title: "路径三：对人机恋的反思",
+            title: "路径三——对人机恋的反思",
             content: [
                 "人机恋的发展也许会带来三方面的负面影响：",
                 {
